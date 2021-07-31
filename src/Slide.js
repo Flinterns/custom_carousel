@@ -11,6 +11,7 @@ const SlideContainer = styled.div`
   align-items: center;
   justify-content: center;
   transform-origin: 50% 50%;
+  
 `;
 
 const SlideCard = styled.div`
@@ -25,6 +26,7 @@ const SlideCard = styled.div`
   align-items: center;
   justify-content: center;
   transform-origin: 50% 50%;
+
 `;
 
 function Slide({

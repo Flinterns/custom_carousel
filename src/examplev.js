@@ -6,15 +6,15 @@ import { config } from "react-spring";
 let slides = [
   {
     key: uuidv4(),
-    content: <img src="https://picsum.photos/800/801/?random" alt="1" />
+    content: <img src="https://rukminim1.flixcart.com/flap/1688/280/image/4abbdcd0a4ad2a6b.jpg?q=50" alt="1" />
   },
   {
     key: uuidv4(),
-    content: <img src="https://picsum.photos/800/802/?random" alt="2" />
+    content: <img src="https://rukminim1.flixcart.com/flap/1688/280/image/aa9606c4e9186450.jpg?q=50" alt="2" />
   },
   {
     key: uuidv4(),
-    content: <img src="https://picsum.photos/600/803/?random" alt="3" />
+    content: <img src="https://rukminim1.flixcart.com/flap/1688/280/image/a4f65e0b2afb8b8f.jpg?q=50" alt="3" />
   },
   {
     key: uuidv4(),
@@ -41,7 +41,7 @@ let slides = [
 export default class ExampleV extends Component {
   state = {
     goToSlide: 0,
-    offsetRadius: 2,
+    offsetRadius: 0,
     showNavigation: true,
     config: config.gentle
   };
@@ -63,7 +63,7 @@ export default class ExampleV extends Component {
           width: "100vw",
           height: "100vh",
           margin: "0 auto",
-          background: "#7FfFbF"
+          background: "white"
         }}
       >
         <VerticalCarousel

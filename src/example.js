@@ -12,23 +12,23 @@ export default class Example extends Component {
 
   state = {
     goToSlide: 0,
-    offsetRadius: 2,
+    offsetRadius: 0,
     showNavigation: true,
-    config: config.gentle,
+    // config:config.stiff
   };
 
   slides = [
     {
       key: uuidv4(),
-      content: <img src="https://picsum.photos/800/801/?random" alt="1" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1688/280/image/4abbdcd0a4ad2a6b.jpg?q=50" alt="1" />,
     },
     {
       key: uuidv4(),
-      content: <img src="https://picsum.photos/800/802/?random" alt="2" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1688/280/image/aa9606c4e9186450.jpg?q=50" alt="2" />,
     },
     {
       key: uuidv4(),
-      content: <img src="https://picsum.photos/600/803/?random" alt="3" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1688/280/image/a4f65e0b2afb8b8f.jpg?q=50" alt="3" />,
     },
     {
       key: uuidv4(),
@@ -36,7 +36,7 @@ export default class Example extends Component {
     },
     {
       key: uuidv4(),
-      content: <img src="https://picsum.photos/800/804/?random" alt="5" />,
+      content: <img src="" alt="5" />,
     },
     {
       key: uuidv4(),
@@ -66,14 +66,15 @@ export default class Example extends Component {
 
   render() {
     return (
-      <div style={{ width: "100%", height: "500px", margin: "0 auto" }}>
+      <div style={{ width: "100%", height: "500px", margin: "0 auto"}}>
         <Carousel
           slides={this.slides}
           goToSlide={this.state.goToSlide}
           offsetRadius={this.state.offsetRadius}
-          showNavigation={this.state.showNavigation}
+          // showNavigation={this.state.showNavigation}
           animationConfig={this.state.config}
           onClick={this.func()}
+          showArrows={false}
         />
         <div
           style={{
@@ -82,69 +83,40 @@ export default class Example extends Component {
             width: "50%",
             display: "flex",
             justifyContent: "space-around",
+  
           }}
         >
-          <div>
-            <label>Go to slide: </label>
-            <input name="goToSlide" onChange={this.onChangeInput} />
-          </div>
-          <div>
-            <label>Offset Radius: </label>
-            <input name="offsetRadius" onChange={this.onChangeInput} />
-          </div>
-          <div>
-            <label>Show navigation: </label>
-            <input
-              type="checkbox"
-              checked={this.state.showNavigation}
-              name="showNavigation"
-              onChange={(e) => {
-                this.setState({ showNavigation: e.target.checked });
+           <div
+             style={{position: "absolute",
+                  display: "flex",
+              height: "70px",
+              top:"30%",
+            margin:"10% 5%",
+                width: "90%",
+          justifyContent: "space-between",
+              zIndex: "1000",
               }}
-            />
-          </div>
-          <div>
+              >
+            <button
+             
+              onClick={() => {
+                this.setState({ goToSlide: this.state.goToSlide - 1 });
+              }}
+            >
+              Left Arrow
+            </button>
+            &nbsp; &nbsp; &nbsp; &nbsp;
             <button
               onClick={() => {
-                this.setState({ config: config.gentle });
+                this.setState({ goToSlide: this.state.goToSlide + 1 });
               }}
-              disabled={this.state.config === config.gentle}
             >
-              Gentle Transition
+              Right Arrow
             </button>
           </div>
-          <div>
-            <button
-              onClick={() => {
-                this.setState({ config: config.slow });
-              }}
-              disabled={this.state.config === config.slow}
-            >
-              Slow Transition
-            </button>
-          </div>
-          <div>
-            <button
-              onClick={() => {
-                this.setState({ config: config.wobbly });
-              }}
-              disabled={this.state.config === config.wobbly}
-            >
-              Wobbly Transition
-            </button>
-          </div>
-          <div>
-            <button
-              onClick={() => {
-                this.setState({ config: config.stiff });
-              }}
-              disabled={this.state.config === config.stiff}
-            >
-              Stiff Transition
-            </button>
-          </div>
-        </div>
-      </div>
-    );
+         
+  </div>
+  </div>
+  );
   }
 }

@@ -8,19 +8,20 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  background:white;
   height: 100%;
 `;
 
 const NavigationButtons = styled.div`
-  position: relative;
+  position: absolute;
   display: flex;
+  height: 70px;
+  margin:10% 5%;
+  width: 90%;
 
-  height: 60px;
-  margin: 0 auto;
-  width: 20%;
-  margin-top: 1rem;
   justify-content: space-between;
   z-index: 1000;
+  
 `;
 
 const NavBtn = styled.div`
@@ -70,8 +71,8 @@ class VerticalCarousel extends React.Component {
   };
 
   static defaultProps = {
-    offsetRadius: 2,
-    animationConfig: { tension: 120, friction: 14 }
+    offsetRadius: 0,
+    // animationConfig: { tension: 120, friction: 14 }
   };
 
   modBySlidesLength = index => {
