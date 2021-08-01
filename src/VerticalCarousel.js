@@ -15,12 +15,11 @@ const NavigationButtons = styled.div`
   position: absolute;
   display: flex;
   height: 70px;
-  margin:10% 5%;
+  margin: 10% 5%;
   width: 90%;
 
   justify-content: space-between;
   z-index: 1000;
-  
 `;
 
 const NavBtn = styled.div`
@@ -39,11 +38,11 @@ class VerticalCarousel extends React.Component {
     index: 0,
     goToSlide: null,
     prevPropsGoToSlide: 0,
-    newSlide: false
+    newSlide: false,
   };
 
   componentDidMount = () => {
-    document.addEventListener("keydown", event => {
+    document.addEventListener("keydown", (event) => {
       if (event.isComposing || event.keyCode === 229) {
         return;
       }
@@ -60,13 +59,13 @@ class VerticalCarousel extends React.Component {
     slides: PropTypes.arrayOf(
       PropTypes.shape({
         key: PropTypes.any,
-        content: PropTypes.object
+        content: PropTypes.object,
       })
     ).isRequired,
     goToSlide: PropTypes.number,
     showNavigation: PropTypes.bool,
     offsetRadius: PropTypes.number,
-    animationConfig: PropTypes.object
+    animationConfig: PropTypes.object,
   };
 
   static defaultProps = {
@@ -74,14 +73,14 @@ class VerticalCarousel extends React.Component {
     // animationConfig: { tension: 120, friction: 14 }
   };
 
-  modBySlidesLength = index => {
+  modBySlidesLength = (index) => {
     return mod(index, this.props.slides.length);
   };
 
-  moveSlide = direction => {
+  moveSlide = (direction) => {
     this.setState({
       index: this.modBySlidesLength(this.state.index + direction),
-      goToSlide: null
+      goToSlide: null,
     });
   };
 
