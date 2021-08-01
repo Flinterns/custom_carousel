@@ -41,9 +41,10 @@ let slides = [
 export default class ExampleV extends Component {
   state = {
     goToSlide: 0,
-    offsetRadius: 0,
+    offsetRadius: 1,
     showNavigation: true,
-    config: config.gentle
+    config: config.gentle,
+    animationConfig: { tension: 120, friction: 14 }
   };
 
   // onChangeInput = e => {

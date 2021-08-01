@@ -12,23 +12,25 @@ export default class Example extends Component {
 
   state = {
     goToSlide: 0,
-    offsetRadius: 0,
+    offsetRadius: 2,
     showNavigation: true,
+    autoplay: true,
+     interval: 1000
     // config:config.stiff
   };
 
   slides = [
     {
       key: uuidv4(),
-      content: <img src="https://rukminim1.flixcart.com/flap/1688/280/image/4abbdcd0a4ad2a6b.jpg?q=50" alt="1" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1400/280/image/4abbdcd0a4ad2a6b.jpg?q=50" alt="1" />,
     },
     {
       key: uuidv4(),
-      content: <img src="https://rukminim1.flixcart.com/flap/1688/280/image/aa9606c4e9186450.jpg?q=50" alt="2" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1400/280/image/aa9606c4e9186450.jpg?q=50" alt="2" />,
     },
     {
       key: uuidv4(),
-      content: <img src="https://rukminim1.flixcart.com/flap/1688/280/image/a4f65e0b2afb8b8f.jpg?q=50" alt="3" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1400/280/image/a4f65e0b2afb8b8f.jpg?q=50" alt="3" />,
     },
     {
       key: uuidv4(),
@@ -72,8 +74,9 @@ export default class Example extends Component {
           goToSlide={this.state.goToSlide}
           offsetRadius={this.state.offsetRadius}
           // showNavigation={this.state.showNavigation}
-          animationConfig={this.state.config}
-          onClick={this.func()}
+          autoplay={this.state.autoplay}
+          interval={this.state.interval}
+          //onClick={this.func()}
           showArrows={false}
         />
         <div
