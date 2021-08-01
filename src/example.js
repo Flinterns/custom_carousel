@@ -6,16 +6,20 @@ import { config } from "react-spring";
 export default class Example extends Component {
   constructor(props) {
     super(props);
-
-    this.func = this.func.bind(this);
+    this.state = {
+      goToSlide: 0,
+      offsetRadius: 2,
+      showNavigation: true,
+      config: config.gentle,
+      modalVisible: false,
+      popUpImage: ""
+    };
+   
+    this.openModal = this.openModal.bind(this);
+   // this.func = this.func.bind(this);
   }
 
-  state = {
-    goToSlide: 0,
-    offsetRadius: 2,
-    showNavigation: true,
-    config: config.gentle,
-  };
+ 
 
   slides = [
     {
@@ -51,7 +55,7 @@ export default class Example extends Component {
       content: <img src="https://picsum.photos/805/800/?random" alt="8" />,
     },
   ].map((slide, index) => {
-    return { ...slide, onClick: () => this.setState({ goToSlide: index }) };
+    return { ...slide, onClick: () => {this.setState({ goToSlide: index }); this.openModal(slide.content) }};
   });
 
   onChangeInput = (e) => {
@@ -60,11 +64,21 @@ export default class Example extends Component {
     });
   };
 
-  func() {
-    console.log("on click");
+ 
+  openModal() {
+    console.log("Open modal called ", this.state.modalVisible);
+    const modalVisible = !this.state.modalVisible;
+    this.setState({
+      modalVisible
+    });
   }
 
   render() {
+
+    let styles = this.state.modalVisible
+    ? { display: "block" }
+    : { display: "none" };
+
     return (
       <div style={{ width: "100%", height: "500px", margin: "0 auto" }}>
         <Carousel
@@ -73,7 +87,6 @@ export default class Example extends Component {
           offsetRadius={this.state.offsetRadius}
           showNavigation={this.state.showNavigation}
           animationConfig={this.state.config}
-          onClick={this.func()}
         />
         <div
           style={{
@@ -144,7 +157,52 @@ export default class Example extends Component {
             </button>
           </div>
         </div>
+
+  
+        <div
+          id="myModal"
+          className="modal fade in"
+          role="dialog"
+          style={styles}
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <button
+                  type="button"
+                  onClick={this.openModal}
+                  className="close"
+                >
+                  &times;
+                </button>
+                <h4 className="modal-title">Modal Header</h4>
+              </div>
+              <div className="modal-body">
+              <img src="https://picsum.photos/200/300/?random" alt="7" /></div>
+              <div className="modal-footer">
+                <button
+                  onClick={this.openModal}
+                  type="button"
+                  className="btn btn-default"
+                >
+                  Close
+                </button>
+
+                <button
+                  
+                  type="button"
+                  className="btn btn-default"
+                >
+                  Go To Landing Page
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      
     );
   }
 }
