@@ -122,8 +122,7 @@ export default class Example extends Component {
           
 
 
-            &nbsp; &nbsp; &nbsp; &nbsp;
-            <div style={{
+          <div style={{
                   background:"white",
                   height:"50px",
                   width:"50px",
@@ -167,8 +166,9 @@ export default class Example extends Component {
              </img>
              </div>
           </div>
-        </div>
-      </div>
-    );
+         
+  </div>
+  </div>
+  );
   }
 }

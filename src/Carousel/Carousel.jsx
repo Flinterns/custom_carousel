@@ -74,7 +74,7 @@ export default function Example({ slides: sourceSlides = [] }) {
       >
         <div
           style={{
-            position: "absolute",
+            
             display: "flex",
             height: "70px",
             top: "30%",
@@ -84,23 +84,52 @@ export default function Example({ slides: sourceSlides = [] }) {
             zIndex: "1000",
           }}
         >
-          <button
-            onClick={() => {
-              setState({ goToSlide: state.goToSlide - 1 });
-            }}
-          >
-            Left Arrow
-          </button>
-          &nbsp; &nbsp; &nbsp; &nbsp;
-          <button
-            onClick={() => {
-              setState({ goToSlide: state.goToSlide + 1 });
-            }}
-          >
-            Right Arrow
-          </button>
-        </div>
-      </div>
-    </div>
+          <div style={{
+                  background:"white",
+                  height:"40px",
+                  width:"40px",
+                  position:"absolute",
+                  left:"4%",
+                  top:"45%",
+
+          }}>
+            <img src="https://img.icons8.com/material-outlined/24/000000/long-arrow-left.png"
+               style={{ width:"30px",
+               height:"30px", 
+              margin:"5px",
+             }}
+             onClick={() => {
+               setState({ goToSlide: state.goToSlide - 1 });
+             }}
+           >
+    
+          </img>
+          </div>
+            <div style={{
+                  background:"white",
+                  height:"40px",
+                  width:"40px",
+                  margin:"0%",
+                  position:"absolute",
+                  left:"91%",
+                  top:"45%",
+
+          }}>
+           
+            <img src="https://img.icons8.com/material-sharp/24/000000/long-arrow-right.png"
+              onClick={() => {
+                setState({ goToSlide: state.goToSlide + 1 });
+              }}
+              style={{ width:"30px",
+               height:"30px", 
+              margin:"5px",
+             }}
+            >
+             </img>
+             </div>
+          </div>
+         
+  </div>
+  </div>
   );
-}
+  }
