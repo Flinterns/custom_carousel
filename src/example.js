@@ -34,23 +34,23 @@ export default class Example extends Component {
     },
     {
       key: uuidv4(),
-      content: <img src="https://picsum.photos/800/500/?random" alt="4" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/3ef6b71c7dda2ebe.jpg?q=50" alt="4" />,
     },
     {
       key: uuidv4(),
-      content: <img src="" alt="5" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/bbbf1d709468c0e4.jpg?q=50" alt="5" />,
     },
     {
       key: uuidv4(),
-      content: <img src="https://picsum.photos/500/800/?random" alt="6" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/a4aa90e138dde3c6.jpg?q=50" alt="6" />,
     },
     {
       key: uuidv4(),
-      content: <img src="https://picsum.photos/800/600/?random" alt="7" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/3ef6b71c7dda2ebe.jpg?q=50" alt="7" />,
     },
     {
       key: uuidv4(),
-      content: <img src="https://picsum.photos/805/800/?random" alt="8" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/3419f1a004b7504b.jpg?q=50" alt="8" />,
     },
   ].map((slide, index) => {
     return { ...slide, onClick: () => this.setState({ goToSlide: index }) };
