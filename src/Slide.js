@@ -11,7 +11,6 @@ const SlideContainer = styled.div`
   align-items: center;
   justify-content: center;
   transform-origin: 50% 50%;
-  
 `;
 
 const SlideCard = styled.div`
@@ -26,7 +25,6 @@ const SlideCard = styled.div`
   align-items: center;
   justify-content: center;
   transform-origin: 50% 50%;
-
 `;
 
 function Slide({
@@ -37,13 +35,13 @@ function Slide({
   moveSlide,
   delta,
   down,
-  up
+  up,
 }) {
   const offsetFromMiddle = index - offsetRadius;
   const totalPresentables = 2 * offsetRadius + 1;
   const distanceFactor = 1 - Math.abs(offsetFromMiddle / (offsetRadius + 1));
 
-  const offsetCardClick = i => {
+  const offsetCardClick = (i) => {
     console.log(i);
   };
 
@@ -81,15 +79,15 @@ function Slide({
         top: `${
           offsetRadius === 0 ? 50 : 50 + (offsetFromMiddle * 50) / offsetRadius
         }%`,
-        opacity: distanceFactor * distanceFactor
+        opacity: distanceFactor * distanceFactor,
       }}
       config={animationConfig}
     >
-      {style => (
+      {(style) => (
         <SlideContainer
           style={{
             ...style,
-            zIndex: Math.abs(Math.abs(offsetFromMiddle) - 2)
+            zIndex: Math.abs(Math.abs(offsetFromMiddle) - 2),
           }}
         >
           <SlideCard onClick={() => moveSlide(offsetFromMiddle)}>

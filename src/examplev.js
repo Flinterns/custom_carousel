@@ -6,6 +6,7 @@ import { config } from "react-spring";
 let slides = [
   {
     key: uuidv4(),
+
     content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/4abbdcd0a4ad2a6b.jpg?q=50" alt="1" />
   },
   {
@@ -36,6 +37,7 @@ let slides = [
     key: uuidv4(),
     content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/3419f1a004b7504b.jpg?q=50" alt="8" />
   }
+
 ];
 
 export default class ExampleV extends Component {
@@ -44,7 +46,7 @@ export default class ExampleV extends Component {
     offsetRadius: 1,
     showNavigation: true,
     config: config.gentle,
-    animationConfig: { tension: 120, friction: 14 }
+    animationConfig: { tension: 120, friction: 14 },
   };
 
   // onChangeInput = e => {
@@ -63,8 +65,10 @@ export default class ExampleV extends Component {
           justifyContent: "center",
           width: "100vw",
           height: "100vh",
+
           margin: "0",
           background: "white"
+
         }}
       >
         <VerticalCarousel

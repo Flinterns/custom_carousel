@@ -15,22 +15,39 @@ export default class Example extends Component {
     offsetRadius: 2,
     showNavigation: true,
     autoplay: true,
-     interval: 1000
+    interval: 1000,
     // config:config.stiff
   };
 
   slides = [
     {
       key: uuidv4(),
-      content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/4abbdcd0a4ad2a6b.jpg?q=50" alt="1" />,
+
+      content: (
+        <img
+          src="https://rukminim1.flixcart.com/flap/1400/280/image/4abbdcd0a4ad2a6b.jpg?q=50"
+          alt="1"
+        />
+      ),
     },
     {
       key: uuidv4(),
-      content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/aa9606c4e9186450.jpg?q=50" alt="2" />,
+      content: (
+        <img
+          src="https://rukminim1.flixcart.com/flap/1400/280/image/aa9606c4e9186450.jpg?q=50"
+          alt="2"
+        />
+      ),
     },
     {
       key: uuidv4(),
-      content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/a4f65e0b2afb8b8f.jpg?q=50" alt="3" />,
+      content: (
+        <img
+          src="https://rukminim1.flixcart.com/flap/1400/280/image/a4f65e0b2afb8b8f.jpg?q=50"
+          alt="3"
+        />
+      ),
+
     },
     {
       key: uuidv4(),
@@ -38,7 +55,9 @@ export default class Example extends Component {
     },
     {
       key: uuidv4(),
+
       content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/bbbf1d709468c0e4.jpg?q=50" alt="5" />,
+
     },
     {
       key: uuidv4(),
@@ -68,7 +87,7 @@ export default class Example extends Component {
 
   render() {
     return (
-      <div style={{ width: "100%", height: "500px", margin: "0 auto"}}>
+      <div style={{ width: "100%", height: "500px", margin: "0 auto" }}>
         <Carousel
           slides={this.slides}
           goToSlide={this.state.goToSlide}
@@ -86,9 +105,9 @@ export default class Example extends Component {
             width: "100%",
             display: "flex",
             justifyContent: "space-around",
-  
           }}
         >
+
            <div
              style={{
               display: "flex",
@@ -101,6 +120,7 @@ export default class Example extends Component {
               }}
               >
           
+
 
             &nbsp; &nbsp; &nbsp; &nbsp;
             <div style={{
@@ -147,9 +167,8 @@ export default class Example extends Component {
              </img>
              </div>
           </div>
-         
-  </div>
-  </div>
-  );
+        </div>
+      </div>
+    );
   }
 }
