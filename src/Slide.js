@@ -17,8 +17,8 @@ const SlideContainer = styled.div`
 const SlideCard = styled.div`
   position: relative;
   max-width: 50%;
-  min-width: 30%;
-  width: 100vw;
+  min-width: 20%;
+  width: 100%;
   height: 100%;
   background: white;
   font-size: 35px;

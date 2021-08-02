@@ -22,15 +22,15 @@ export default class Example extends Component {
   slides = [
     {
       key: uuidv4(),
-      content: <img src="https://rukminim1.flixcart.com/flap/1400/280/image/4abbdcd0a4ad2a6b.jpg?q=50" alt="1" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/4abbdcd0a4ad2a6b.jpg?q=50" alt="1" />,
     },
     {
       key: uuidv4(),
-      content: <img src="https://rukminim1.flixcart.com/flap/1400/280/image/aa9606c4e9186450.jpg?q=50" alt="2" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/aa9606c4e9186450.jpg?q=50" alt="2" />,
     },
     {
       key: uuidv4(),
-      content: <img src="https://rukminim1.flixcart.com/flap/1400/280/image/a4f65e0b2afb8b8f.jpg?q=50" alt="3" />,
+      content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/a4f65e0b2afb8b8f.jpg?q=50" alt="3" />,
     },
     {
       key: uuidv4(),
@@ -83,39 +83,69 @@ export default class Example extends Component {
           style={{
             margin: "0 auto",
             marginTop: "2rem",
-            width: "50%",
+            width: "100%",
             display: "flex",
             justifyContent: "space-around",
   
           }}
         >
            <div
-             style={{position: "absolute",
-                  display: "flex",
+             style={{
+              display: "flex",
               height: "70px",
               top:"30%",
-            margin:"10% 5%",
-                width: "90%",
-          justifyContent: "space-between",
+              margin:"10% 5%",
+              width: "90%",
+              justifyContent: "space-between",
               zIndex: "1000",
               }}
               >
-            <button
-             
-              onClick={() => {
-                this.setState({ goToSlide: this.state.goToSlide - 1 });
-              }}
-            >
-              Left Arrow
-            </button>
+          
+
             &nbsp; &nbsp; &nbsp; &nbsp;
-            <button
+            <div style={{
+                  background:"white",
+                  height:"50px",
+                  width:"50px",
+                  position:"absolute",
+                  left:"4%",
+                  top:"45%",
+
+          }}>
+            <img src="https://img.icons8.com/material-outlined/24/000000/long-arrow-left.png"
+               style={{ width:"40px",
+               height:"40px", 
+              margin:"5px",
+             }}
+             onClick={() => {
+               this.setState({ goToSlide: this.state.goToSlide - 1 });
+             }}
+           >
+    
+          </img>
+          </div>
+            <div style={{
+                  background:"white",
+                  height:"50px",
+                  width:"50px",
+                  margin:"0%",
+                  position:"absolute",
+                  left:"91%",
+                  top:"45%",
+
+          }}>
+           
+            <img src="https://img.icons8.com/material-sharp/24/000000/long-arrow-right.png"
               onClick={() => {
                 this.setState({ goToSlide: this.state.goToSlide + 1 });
               }}
+              style={{ width:"40px",
+               height:"40px", 
+              margin:"5px",
+             }}
             >
-              Right Arrow
-            </button>
+             </img>
+             </div>
           </div>
          
   </div>
