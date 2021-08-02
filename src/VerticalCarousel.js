@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 50%;
+
 `;
 
 const NavigationButtons = styled.div`
@@ -17,7 +18,6 @@ const NavigationButtons = styled.div`
   height: 70px;
   margin: 10% 5%;
   width: 90%;
-
   justify-content: space-between;
   z-index: 1000;
 `;
