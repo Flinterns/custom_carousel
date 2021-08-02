@@ -71,12 +71,16 @@ export default class Example extends Component {
     this.setState({
       modalVisible
     });
+   
   }
 
   render() {
 
     let styles = this.state.modalVisible
-    ? { display: "block" }
+    ? { position:  "absolute", 
+        top:"10%",
+        left:"40%",
+        zIndex:"3"}
     : { display: "none" };
 
     return (
