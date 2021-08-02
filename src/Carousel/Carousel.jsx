@@ -5,6 +5,8 @@ import Dots from "./Dots";
 
 let interval = null;
 
+
+
 export default function Example({ slides: sourceSlides = [] }) {
   const ref = useRef();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,15 +15,26 @@ export default function Example({ slides: sourceSlides = [] }) {
     offsetRadius: 2,
     showNavigation: false,
     config: config.gentle,
+    modalVisible: false
   });
 
   const slides = [...sourceSlides].map((slide, index) => {
     return {
       ...slide,
-      onClick: () => setState({ ...state, goToSlide: index }),
+      onClick: () => {setState({ ...state, goToSlide: index});  openModal(slide.content) },
     };
   });
 
+  const openModal = () => {
+    console.log("Open modal called ", state.modalVisible);
+    const modalVisible = !state.modalVisible;
+    setState({
+      modalVisible
+    });
+   
+  }
+
+  
   const updateSlide = () => {
     setCurrentSlide(ref.current.state.index + 1);
   };
@@ -46,7 +59,15 @@ export default function Example({ slides: sourceSlides = [] }) {
     setCurrentSlide(v);
   };
 
+  let styles = state.modalVisible
+  ? { position:  "absolute", 
+      top:"10%",
+      left:"40%",
+      zIndex:"3"}
+  : { display: "none" };
+
   return (
+    
     <div style={{ width: "80%", height: "500px", margin: "0 auto" }}>
       <Carousel
         ref={ref}
@@ -130,6 +151,47 @@ export default function Example({ slides: sourceSlides = [] }) {
           </div>
          
   </div>
+
+  <div
+          id="myModal"
+          className="modal fade in"
+          role="dialog"
+          style={styles}
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <button
+                  type="button"
+                  onClick={openModal}
+                  className="close"
+                >
+                  &times;
+                </button>
+                <h4 className="modal-title">Modal Header</h4>
+              </div>
+              <div className="modal-body">
+              <img src="https://picsum.photos/500/300/?random" alt="7" /></div>
+              <div className="modal-footer">
+                <button
+                  onClick={openModal}
+                  type="button"
+                  className="btn btn-default"
+                >
+                  Close
+                </button>
+
+                <button
+                  
+                  type="button"
+                  className="btn btn-default"
+                >
+                  Go To Landing Page
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
   </div>
   );
   }
