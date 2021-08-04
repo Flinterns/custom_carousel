@@ -74,6 +74,8 @@ class VerticalCarousel extends React.Component {
   
   };
 
+  //check
+
   componentWillUnmount=()=>{
     clearInterval(this.interval);
   }
