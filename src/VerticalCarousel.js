@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { useEffect, useRef, useState, Component } from "react";
 import styled from "@emotion/styled";
 import Slide from "./Slide";
 import PropTypes from "prop-types";
-
+let interval=null;
 const Wrapper = styled.div`
   position: relative;
   display: flex;
@@ -39,6 +39,7 @@ class VerticalCarousel extends React.Component {
     goToSlide: null,
     prevPropsGoToSlide: 0,
     newSlide: false,
+    digit :0,
   };
 
   componentDidMount = () => {
@@ -52,8 +53,31 @@ class VerticalCarousel extends React.Component {
       if (event.keyCode === 40) {
         this.moveSlide(1);
       }
+      
+    
+
     });
+    const updateSlide = () => {
+      this.moveSlide(1);
+    };
+  
+   
+    
+      interval = setInterval(()=> {
+        this.setState({
+           index: this.modBySlidesLength(this.state.index + 1),
+            goToSlide: null,
+          });
+          
+        }, 3000);
+      
+  
   };
+
+  componentWillUnmount=()=>{
+    clearInterval(this.interval);
+  }
+  
 
   static propTypes = {
     slides: PropTypes.arrayOf(

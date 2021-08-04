@@ -24,7 +24,7 @@ export default function Example({ slides: sourceSlides = [] }) {
       onClick: () => {setState({ ...state, goToSlide: index});  openModal(slide.content) },
     };
   });
-
+   
   const openModal = () => {
     console.log("Open modal called ", state.modalVisible);
     const modalVisible = !state.modalVisible;
