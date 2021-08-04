@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Carousel from "react-spring-3d-carousel";
 import { config } from "react-spring";
 import Dots from "./Dots";
+import "../index.css"
 
 let interval = null;
 
@@ -15,7 +16,8 @@ export default function Example({ slides: sourceSlides = [] }) {
     offsetRadius: 2,
     showNavigation: false,
     config: config.gentle,
-    modalVisible: false
+    modalVisible: false,
+    animationElement :true,
   });
 
   const slides = [...sourceSlides].map((slide, index) => {
@@ -41,15 +43,19 @@ export default function Example({ slides: sourceSlides = [] }) {
 
   useEffect(() => {
     // eslint-disable-next-line
+    if(state.animationElement){
     interval = setInterval(updateSlide, 3000);
+    }
     return () => {
       clearInterval(interval);
     };
+    
   }, []);
 
   useEffect(() => {
+    if(state.animationElement){
     setState({ ...state, goToSlide: currentSlide });
-
+    }
     // eslint-disable-next-line
   }, [currentSlide]);
 
@@ -65,7 +71,15 @@ export default function Example({ slides: sourceSlides = [] }) {
       left:"40%",
       zIndex:"3"}
   : { display: "none" };
-
+  const toggle = () => { 
+    const animationElement = !state.animationElement;
+    setState({
+      animationElement
+    });
+   
+    console.log(state.animationElement);
+  };
+  
   return (
     
     <div style={{ width: "80%", height: "500px", margin: "0 auto" }}>
@@ -147,6 +161,7 @@ export default function Example({ slides: sourceSlides = [] }) {
              }}
             >
              </img>
+             <button onClick={()=> toggle() } >Pause</button>
              </div>
           </div>
          

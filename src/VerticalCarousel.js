@@ -34,14 +34,17 @@ function mod(a, b) {
 }
 
 class VerticalCarousel extends React.Component {
+  
+
   state = {
     index: 0,
     goToSlide: null,
     prevPropsGoToSlide: 0,
     newSlide: false,
-    digit :0,
-  };
+    animationElement : true,
 
+  };
+ 
   componentDidMount = () => {
     document.addEventListener("keydown", (event) => {
       if (event.isComposing || event.keyCode === 229) {
@@ -62,16 +65,16 @@ class VerticalCarousel extends React.Component {
     };
   
    
-    
       interval = setInterval(()=> {
+        if(this.state.animationElement)
+   {
         this.setState({
            index: this.modBySlidesLength(this.state.index + 1),
             goToSlide: null,
           });
-          
-        }, 3000);
-      
-  
+         
+      }}, 3000);
+    
   };
 
   componentWillUnmount=()=>{
@@ -92,10 +95,12 @@ class VerticalCarousel extends React.Component {
     animationConfig: PropTypes.object,
   };
 
+
   static defaultProps = {
     offsetRadius: 0,
     // animationConfig: { tension: 120, friction: 14 }
   };
+ 
 
   modBySlidesLength = (index) => {
     return mod(index, this.props.slides.length);
@@ -107,7 +112,12 @@ class VerticalCarousel extends React.Component {
       goToSlide: null,
     });
   };
-
+  toggle = () => { 
+    this.setState({
+      animationElement : !this.state.animationElement
+    })
+  };
+  
   clampOffsetRadius(offsetRadius) {
     const { slides } = this.props;
     const upperBound = Math.floor((slides.length - 1) / 2);
@@ -148,6 +158,7 @@ class VerticalCarousel extends React.Component {
         </NavigationButtons>
       );
     }
+    
     return (
       <React.Fragment>
         <Wrapper>
@@ -160,8 +171,10 @@ class VerticalCarousel extends React.Component {
               index={presentableIndex}
               animationConfig={animationConfig}
             />
+           
           ))}
         </Wrapper>
+        <button onClick={()=> this.toggle() } >Pause</button>
         {navigationButtons}
       </React.Fragment>
     );

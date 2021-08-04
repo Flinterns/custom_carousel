@@ -65,7 +65,6 @@ export default class ExampleV extends Component {
           justifyContent: "center",
           width: "100vw",
           height: "100vh",
-
           margin: "0",
           background: "white"
 

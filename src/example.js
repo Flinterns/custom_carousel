@@ -80,14 +80,16 @@ export default class Example extends Component {
       [e.target.name]: parseInt(e.target.value, 10) || 0,
     });
   };
-
+  
   func() {
     console.log("on click");
   }
 
   render() {
     return (
+        
       <div style={{ width: "100%", height: "500px", margin: "0 auto" }}>
+        
         <Carousel
           slides={this.slides}
           goToSlide={this.state.goToSlide}
@@ -97,7 +99,9 @@ export default class Example extends Component {
           interval={this.state.interval}
           //onClick={this.func()}
           showArrows={false}
+          
         />
+           
         <div
           style={{
             margin: "0 auto",
@@ -131,6 +135,7 @@ export default class Example extends Component {
                   top:"45%",
 
           }}>
+          
             <img src="https://img.icons8.com/material-outlined/24/000000/long-arrow-left.png"
                style={{ width:"40px",
                height:"40px", 
@@ -164,6 +169,7 @@ export default class Example extends Component {
              }}
             >
              </img>
+            
              </div>
           </div>
          
