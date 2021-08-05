@@ -47,6 +47,7 @@ export default class ExampleV extends Component {
     showNavigation: true,
     config: config.gentle,
     animationConfig: { tension: 120, friction: 14 },
+    modalVisible: false,
   };
 
   // onChangeInput = e => {
@@ -54,7 +55,13 @@ export default class ExampleV extends Component {
   //     [e.target.name]: parseInt(e.target.value, 10) || 0
   //   });
   // };
-
+ 
+   styles = this.state.modalVisible
+  ? { position:  "absolute", 
+      top:"10%",
+      left:"40%",
+      zIndex:"3"}
+  : { display: "none" };
   render() {
     return (
       <div
@@ -67,7 +74,6 @@ export default class ExampleV extends Component {
           height: "100vh",
           margin: "0",
           background: "white"
-
         }}
       >
         <VerticalCarousel
@@ -76,7 +82,49 @@ export default class ExampleV extends Component {
           showNavigation={this.state.showNavigation}
           animationConfig={this.state.config}
         />
-      </div>
+      <div
+          id="myModal"
+          className="modal fade in"
+          role="dialog"
+          style={this.styles}
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <button
+                  type="button"
+                  onClick={this.openModal}
+                  className="close"
+                >
+                  &times;
+                </button>
+                <h4 className="modal-title">Modal Header</h4>
+              </div>
+              <div className="modal-body">
+              <img src="https://picsum.photos/500/300/?random" alt="7" /></div>
+              <div className="modal-footer">
+                <button
+                  onClick={this.openModal}
+                  type="button"
+                  className="btn btn-default"
+                >
+                  Close
+                </button>
+
+                <button
+                  
+                  type="button"
+                  className="btn btn-default"
+                >
+                  Go To Landing Page
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+   
+
     );
   }
 }

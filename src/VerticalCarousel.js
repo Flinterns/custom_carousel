@@ -33,6 +33,7 @@ function mod(a, b) {
   return ((a % b) + b) % b;
 }
 
+
 class VerticalCarousel extends React.Component {
   
 
@@ -42,7 +43,7 @@ class VerticalCarousel extends React.Component {
     prevPropsGoToSlide: 0,
     newSlide: false,
     animationElement : true,
-
+    modalVisible:false,
   };
  
   componentDidMount = () => {
@@ -117,7 +118,14 @@ class VerticalCarousel extends React.Component {
       animationElement : !this.state.animationElement
     })
   };
-  
+  openModal =()=> {
+    this.setState({
+      modalVisible: !this.state.modalVisible,
+      animationElement : !this.state.animationElement
+    });
+
+    console.log(this.state.modalVisible)
+  };
   clampOffsetRadius(offsetRadius) {
     const { slides } = this.props;
     const upperBound = Math.floor((slides.length - 1) / 2);
@@ -145,7 +153,7 @@ class VerticalCarousel extends React.Component {
 
     return presentableSlides;
   }
-
+  
   render() {
     const { animationConfig, offsetRadius, showNavigation } = this.props;
 
@@ -158,10 +166,12 @@ class VerticalCarousel extends React.Component {
         </NavigationButtons>
       );
     }
+   
     
+
     return (
       <React.Fragment>
-        <Wrapper>
+        <Wrapper  onClick ={this.openModal}>
           {this.getPresentableSlides().map((slide, presentableIndex) => (
             <Slide
               key={slide.key}
@@ -170,11 +180,60 @@ class VerticalCarousel extends React.Component {
               offsetRadius={this.clampOffsetRadius(offsetRadius)}
               index={presentableIndex}
               animationConfig={animationConfig}
+              onClick ={this.openModal}
+        
             />
            
           ))}
         </Wrapper>
-        <button onClick={()=> this.toggle() } >Pause</button>
+        <div
+          id="myModal"
+          className="modal fade in"
+          role="dialog"
+        style ={{
+          position:  "absolute", 
+      top:"10%",
+      left:"40%",
+      zIndex:"3",
+      display: this.state.modalVisible? 'block' : 'none'
+    }}
+        >
+          <div className="modal-dialog">
+            <div className="modal-content">
+              <div className="modal-header">
+                <button
+                  type="button"
+                  onClick={this.openModal}
+                  className="close"
+                >
+                  &times;
+                </button>
+                <h4 className="modal-title">Modal Header</h4>
+              </div>
+              <div className="modal-body">
+              <img src="https://picsum.photos/500/300/?random" alt="7" /></div>
+              <div className="modal-footer">
+                <button
+                  onClick={this.openModal}
+                  type="button"
+                  className="btn btn-default"
+                >
+                  Close
+                </button>
+
+                <button
+                  
+                  type="button"
+                  className="btn btn-default"
+                >
+                  Go To Landing Page
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button style={{cursor:"pointer" }}onClick={()=> this.toggle() } >Pause</button>
         {navigationButtons}
       </React.Fragment>
     );

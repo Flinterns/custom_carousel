@@ -11,6 +11,8 @@ const SlideContainer = styled.div`
   align-items: center;
   justify-content: center;
   transform-origin: 50% 50%;
+  cursor: pointer;
+
 `;
 
 const SlideCard = styled.div`
@@ -25,6 +27,7 @@ const SlideCard = styled.div`
   align-items: center;
   justify-content: center;
   transform-origin: 50% 50%;
+
 `;
 
 function Slide({
@@ -36,6 +39,8 @@ function Slide({
   delta,
   down,
   up,
+  openModal
+  
 }) {
   const offsetFromMiddle = index - offsetRadius;
   const totalPresentables = 2 * offsetRadius + 1;
@@ -71,7 +76,7 @@ function Slide({
   } else if (offsetFromMiddle < 0) {
     translateY -= translateYoffset;
   }
-
+  
   return (
     <Spring
       to={{
@@ -82,6 +87,7 @@ function Slide({
         opacity: distanceFactor * distanceFactor,
       }}
       config={animationConfig}
+      style ={{cursor: "pointer"}}
     >
       {(style) => (
         <SlideContainer
