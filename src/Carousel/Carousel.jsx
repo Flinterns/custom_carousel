@@ -41,14 +41,20 @@ export default function Example({ slides: sourceSlides = [] }) {
     setCurrentSlide(ref.current.state.index + 1);
   };
 
+  const updateNeg = () =>{
+    setCurrentSlide(ref.current.state.index - 1);
+  };
+
   useEffect(() => {
     // eslint-disable-next-line
     if(state.animationElement){
     interval = setInterval(updateSlide, 3000);
-    }
+    
     return () => {
       clearInterval(interval);
     };
+
+    }
     
   }, []);
 
@@ -133,9 +139,7 @@ export default function Example({ slides: sourceSlides = [] }) {
                height:"30px", 
               margin:"5px",
              }}
-             onClick={() => {
-               setState({ goToSlide: state.goToSlide - 1 });
-             }}
+             onClick={updateNeg}
            >
     
           </img>
@@ -152,9 +156,7 @@ export default function Example({ slides: sourceSlides = [] }) {
           }}>
            
             <img src="https://img.icons8.com/material-sharp/24/000000/long-arrow-right.png"
-              onClick={() => {
-                setState({ goToSlide: state.goToSlide + 1 });
-              }}
+              onClick={updateSlide}
               style={{ width:"30px",
                height:"30px", 
               margin:"5px",
