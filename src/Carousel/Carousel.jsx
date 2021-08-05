@@ -23,15 +23,15 @@ export default function Example({ slides: sourceSlides = [] }) {
   const slides = [...sourceSlides].map((slide, index) => {
     return {
       ...slide,
-      onClick: () => {setState({ ...state, goToSlide: index});  openModal(slide.content) },
+      onClick: () => {setState({ ...state, goToSlide: index}); },
     };
   });
    
   const openModal = () => {
     console.log("Open modal called ", state.modalVisible);
-    const modalVisible = !state.modalVisible;
+   
     setState({
-      modalVisible
+      modalVisible: !state.modalVisible
     });
    
   }
@@ -39,6 +39,7 @@ export default function Example({ slides: sourceSlides = [] }) {
   
   const updateSlide = () => {
     setCurrentSlide(ref.current.state.index + 1);
+    console.log("test2");
   };
 
   const updateNeg = () =>{
@@ -85,6 +86,25 @@ export default function Example({ slides: sourceSlides = [] }) {
    
     console.log(state.animationElement);
   };
+  const toggleStart = () => { 
+    const animationElement = !state.animationElement;
+    setState({
+      animationElement
+    });
+
+    var date = Date.now ();
+    while (Date.now () - date < 2000);  
+    
+    console.log("test1");
+   
+  };
+
+  const func = () =>{
+
+    toggleStart();
+
+    updateSlide();
+  }
   
   return (
     
@@ -164,6 +184,8 @@ export default function Example({ slides: sourceSlides = [] }) {
             >
              </img>
              <button onClick={()=> toggle() } >Pause</button>
+             <button onClick={()=> func()} >Start</button>
+             
              </div>
           </div>
          
