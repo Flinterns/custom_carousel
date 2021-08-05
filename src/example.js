@@ -18,7 +18,7 @@ export default class Example extends Component {
     interval: 1000,
     // config:config.stiff
   };
-
+  
   slides = [
     {
       key: uuidv4(),
