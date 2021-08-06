@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, Component } from "react";
 import styled from "@emotion/styled";
 import Slide from "./Slide";
 import PropTypes from "prop-types";
+import "./index.css";
 let interval=null;
 const Wrapper = styled.div`
   position: relative;
@@ -170,11 +171,17 @@ class VerticalCarousel extends React.Component {
     
 
     return (
+      
       <React.Fragment>
-        <Wrapper  onClick ={this.openModal}>
+         <div styles ={{
+           opacity: this.state.modalVisible?"0.5":"1"
+         }}>
+        <Wrapper  onClick ={this.openModal}     
+>
           {this.getPresentableSlides().map((slide, presentableIndex) => (
             <Slide
               key={slide.key}
+
               content={slide.content}
               moveSlide={this.moveSlide}
               offsetRadius={this.clampOffsetRadius(offsetRadius)}
@@ -186,16 +193,23 @@ class VerticalCarousel extends React.Component {
            
           ))}
         </Wrapper>
-        <div
-          id="myModal"
-          className="modal fade in"
+    </div>
+  
+        <div id="myModal"
           role="dialog"
-        style ={{
-          position:  "absolute", 
-      top:"10%",
-      left:"40%",
-      zIndex:"3",
+          style ={{
+          position: "absolute", 
+          top:"10%",
+          left:"37%",
+          borderRadius: "5px",
+          zIndex:"3",
+        padding: "10px",
+        background: "#fff",
+        borderradius: "5px",
+        width: "30%",
+        transition: "all 5s ease-in-out",
       display: this.state.modalVisible? 'block' : 'none'
+
     }}
         >
           <div className="modal-dialog">
@@ -204,35 +218,52 @@ class VerticalCarousel extends React.Component {
                 <button
                   type="button"
                   onClick={this.openModal}
-                  className="close"
+                  style={{
+                       background:"white",
+                       fontSize:"40px",
+                       border:"white",
+                       color:"grey"
+    
+                  }}
                 >
                   &times;
                 </button>
-                <h4 className="modal-title">Modal Header</h4>
-              </div>
-              <div className="modal-body">
-              <img src="https://picsum.photos/500/300/?random" alt="7" /></div>
-              <div className="modal-footer">
-                <button
-                  onClick={this.openModal}
-                  type="button"
-                  className="btn btn-default"
-                >
-                  Close
-                </button>
 
-                <button
-                  
-                  type="button"
-                  className="btn btn-default"
+              </div > 
+              <div className="modal-body">
+              <img src="https://picsum.photos/500/300/?random" alt="7" 
+                style={{  maxWidth:"100%",
+                maxHieght:"100%",
+                }}
+                  /></div>
+              <div className="modal-footer">
+                
+
+               <a
+                data-effect="mfp-zoom-in"
+                  style={{
+                    display: "block",
+                    width: "140px",
+                    height: "25px",
+                    background: "#4E9CAF",
+                    padding: "5px",
+                    textAlign: "center",
+                    borderRadius: "5px",
+                    color: "white",
+                    lineHeight: "25px",
+                    fontSize:"15px",
+                    fontFamily:"sans-serif",
+                    float:"right",
+                    transition:"popup"
+                  }}
                 >
-                  Go To Landing Page
-                </button>
+            Go To Landing Page
+                </a>
               </div>
             </div>
           </div>
         </div>
-
+ 
         <button style={{cursor:"pointer" }}onClick={()=> this.toggle() } >Pause</button>
         {navigationButtons}
       </React.Fragment>
