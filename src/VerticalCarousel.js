@@ -153,6 +153,11 @@ class VerticalCarousel extends React.Component {
     return presentableSlides;
   }
 
+  getSlides(){
+    const { slides } = this.props;
+    return slides;
+  }
+
   openModal =()=> {
     const { slides } = this.props;
     this.setState({
@@ -208,6 +213,8 @@ class VerticalCarousel extends React.Component {
           
          
         </Wrapper>
+
+     
 
         
   
@@ -285,6 +292,20 @@ class VerticalCarousel extends React.Component {
  
         <button style={{cursor:"pointer" }}onClick={()=> this.toggle() } >Pause</button>
         {navigationButtons}
+
+        <div className="dots">
+          
+          {this.getSlides().length &&
+            this.getSlides().map((s, i) => {
+              return (
+                <div
+                  key={i}
+                  onClick={() => this.setState({index: i})}
+                  className={`dot ${i === this.state.index ? "dot-active" : ""}`}
+                />
+              );
+            })}
+        </div>
       </React.Fragment>
     );
   }
