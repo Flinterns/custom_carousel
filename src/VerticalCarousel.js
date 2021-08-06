@@ -45,6 +45,7 @@ class VerticalCarousel extends React.Component {
     newSlide: false,
     animationElement : true,
     modalVisible:false,
+    currRef: ""
   };
  
   componentDidMount = () => {
@@ -88,6 +89,7 @@ class VerticalCarousel extends React.Component {
     slides: PropTypes.arrayOf(
       PropTypes.shape({
         key: PropTypes.any,
+        extraRef: PropTypes.any,
         content: PropTypes.object,
       })
     ).isRequired,
@@ -119,14 +121,7 @@ class VerticalCarousel extends React.Component {
       animationElement : !this.state.animationElement
     })
   };
-  openModal =()=> {
-    this.setState({
-      modalVisible: !this.state.modalVisible,
-      animationElement : !this.state.animationElement
-    });
 
-    console.log(this.state.modalVisible)
-  };
   clampOffsetRadius(offsetRadius) {
     const { slides } = this.props;
     const upperBound = Math.floor((slides.length - 1) / 2);
@@ -154,6 +149,17 @@ class VerticalCarousel extends React.Component {
 
     return presentableSlides;
   }
+
+  openModal =()=> {
+    const { slides } = this.props;
+    this.setState({
+      modalVisible: !this.state.modalVisible,
+      animationElement : !this.state.animationElement,
+      currRef : slides[this.state.index].extraRef
+    });
+
+    console.log(this.state.modalVisible)
+  };
   
   render() {
     const { animationConfig, offsetRadius, showNavigation } = this.props;
@@ -173,9 +179,7 @@ class VerticalCarousel extends React.Component {
     return (
       
       <React.Fragment>
-         <div styles ={{
-           opacity: this.state.modalVisible?"0.5":"1"
-         }}>
+        
         <Wrapper  onClick ={this.openModal}     
 >
           {this.getPresentableSlides().map((slide, presentableIndex) => (
@@ -193,7 +197,7 @@ class VerticalCarousel extends React.Component {
            
           ))}
         </Wrapper>
-    </div>
+  
   
         <div id="myModal"
           role="dialog"
@@ -231,7 +235,7 @@ class VerticalCarousel extends React.Component {
 
               </div > 
               <div className="modal-body">
-              <img src="https://picsum.photos/500/300/?random" alt="7" 
+              <img src={this.state.currRef} alt="7" 
                 style={{  maxWidth:"100%",
                 maxHieght:"100%",
                 }}

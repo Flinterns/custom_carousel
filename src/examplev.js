@@ -6,35 +6,42 @@ import { config } from "react-spring";
 let slides = [
   {
     key: uuidv4(),
-
+    extraRef: "https://rukminim1.flixcart.com/flap/1200/280/image/4abbdcd0a4ad2a6b.jpg?q=50" ,
     content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/4abbdcd0a4ad2a6b.jpg?q=50" alt="1" />
   },
   {
     key: uuidv4(),
+    extraRef: "https://rukminim1.flixcart.com/flap/1200/280/image/aa9606c4e9186450.jpg?q=50",
     content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/aa9606c4e9186450.jpg?q=50" alt="2" />
   },
   {
     key: uuidv4(),
+    extraRef: "https://rukminim1.flixcart.com/flap/1200/280/image/a4f65e0b2afb8b8f.jpg?q=50",
     content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/a4f65e0b2afb8b8f.jpg?q=50" alt="3" />
   },
   {
     key: uuidv4(),
+    extraRef: "https://rukminim1.flixcart.com/flap/1200/280/image/3ef6b71c7dda2ebe.jpg?q=50",
     content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/3ef6b71c7dda2ebe.jpg?q=50" alt="4" />
   },
   {
     key: uuidv4(),
+    extraRef: "https://rukminim1.flixcart.com/flap/1200/280/image/bbbf1d709468c0e4.jpg?q=50",
     content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/bbbf1d709468c0e4.jpg?q=50" alt="5" />
   },
   {
     key: uuidv4(),
+    extraRef:"https://rukminim1.flixcart.com/flap/1200/280/image/a4aa90e138dde3c6.jpg?q=50" ,
     content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/a4aa90e138dde3c6.jpg?q=50" alt="6" />
   },
   {
     key: uuidv4(),
+    extraRef:"https://rukminim1.flixcart.com/flap/1200/280/image/3ef6b71c7dda2ebe.jpg?q=50",
     content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/3ef6b71c7dda2ebe.jpg?q=50" alt="7" />
   },
   {
     key: uuidv4(),
+    extraRef: "https://rukminim1.flixcart.com/flap/1200/280/image/3419f1a004b7504b.jpg?q=50",
     content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/3419f1a004b7504b.jpg?q=50" alt="8" />
   }
 

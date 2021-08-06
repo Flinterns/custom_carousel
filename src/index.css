@@ -19,7 +19,27 @@ html, body {
     background-clip: padding-box;
     text-align: center;
   }
-  
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+  .dot.dot-active {
+    background-color: #424242;
+  }
+  .aaa {
+    background-color: red;
+    width: 400px;
+    height: 100px;
+  }
+  .dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
   .button {
     font-size: 1em;
     padding: 10px;
