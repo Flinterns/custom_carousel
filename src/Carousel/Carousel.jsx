@@ -68,7 +68,7 @@ export default function Example({ slides: sourceSlides = [] }) {
 
   const handleClick = (v) => {
     clearInterval(interval);
-    interval = setInterval(updateSlide, 5000);
+    interval = setInterval(updateSlide, 3000);
     setCurrentSlide(v);
   };
 
@@ -107,6 +107,8 @@ export default function Example({ slides: sourceSlides = [] }) {
   }
   
   return (
+
+    <div>
     
     <div style={{ width: "80%", height: "500px", margin: "0 auto" }}>
       <Carousel
@@ -123,6 +125,8 @@ export default function Example({ slides: sourceSlides = [] }) {
         currentSlide={currentSlide >= slides.length ? 0 : currentSlide}
         goToSlide={handleClick}
       />
+
+      </div>
 
       <div
         style={{

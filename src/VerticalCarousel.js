@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, Component } from "react";
 import styled from "@emotion/styled";
 import Slide from "./Slide";
 import PropTypes from "prop-types";
+import Dots from "./Carousel/Dots";
 import "./index.css";
 let interval=null;
 const Wrapper = styled.div`
@@ -161,6 +162,7 @@ class VerticalCarousel extends React.Component {
     console.log(this.state.modalVisible)
   };
   
+  
   render() {
     const { animationConfig, offsetRadius, showNavigation } = this.props;
 
@@ -177,6 +179,8 @@ class VerticalCarousel extends React.Component {
     
 
     return (
+
+      
       
       <React.Fragment>
         
@@ -194,9 +198,15 @@ class VerticalCarousel extends React.Component {
               onClick ={this.openModal}
         
             />
+            
            
           ))}
+
+          
+         
         </Wrapper>
+
+        
   
   
         <div id="myModal"
