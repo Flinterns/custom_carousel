@@ -46,7 +46,8 @@ class VerticalCarousel extends React.Component {
     newSlide: false,
     animationElement : true,
     modalVisible:false,
-    currRef: ""
+    currRef: "",
+    currRefLink: ""
   };
  
   componentDidMount = () => {
@@ -91,6 +92,7 @@ class VerticalCarousel extends React.Component {
       PropTypes.shape({
         key: PropTypes.any,
         extraRef: PropTypes.any,
+        extraRefLink: PropTypes.any,
         content: PropTypes.object,
       })
     ).isRequired,
@@ -156,7 +158,8 @@ class VerticalCarousel extends React.Component {
     this.setState({
       modalVisible: !this.state.modalVisible,
       animationElement : !this.state.animationElement,
-      currRef : slides[this.state.index].extraRef
+      currRef : slides[this.state.index].extraRef,
+      currRefLink : slides[this.state.index].extraRefLink
     });
 
     console.log(this.state.modalVisible)
@@ -255,6 +258,7 @@ class VerticalCarousel extends React.Component {
 
                <a
                 data-effect="mfp-zoom-in"
+                onClick = {()=> window.open(this.state.currRefLink, "_blank")}
                   style={{
                     display: "block",
                     width: "140px",
@@ -268,7 +272,8 @@ class VerticalCarousel extends React.Component {
                     fontSize:"15px",
                     fontFamily:"sans-serif",
                     float:"right",
-                    transition:"popup"
+                    transition:"popup",
+                    cursor:"pointer"
                   }}
                 >
             Go To Landing Page
