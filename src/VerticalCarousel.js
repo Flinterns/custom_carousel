@@ -250,7 +250,7 @@ class VerticalCarousel extends React.Component {
          
         </Wrapper>
 
-        <div className="dots">
+        <div className="dots" style={{marginTop: "2%"}}>
           
           {this.getSlides().length &&
             this.getSlides().map((s, i) => {
