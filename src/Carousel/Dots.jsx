@@ -14,5 +14,7 @@ export default function Dots({ slides = [], currentSlide = 0, goToSlide }) {
           );
         })}
     </div>
+   
   );
+  console.log("test!!");
 }

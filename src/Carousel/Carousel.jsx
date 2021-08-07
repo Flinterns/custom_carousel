@@ -50,12 +50,13 @@ export default function Example({ slides: sourceSlides = [] }) {
     // eslint-disable-next-line
     if(state.animationElement){
     interval = setInterval(updateSlide, 3000);
+    }
     
     return () => {
       clearInterval(interval);
     };
 
-    }
+    
     
   }, []);
 
@@ -68,7 +69,7 @@ export default function Example({ slides: sourceSlides = [] }) {
 
   const handleClick = (v) => {
     clearInterval(interval);
-    interval = setInterval(updateSlide, 5000);
+    interval = setInterval(updateSlide, 3000);
     setCurrentSlide(v);
   };
 
@@ -79,34 +80,32 @@ export default function Example({ slides: sourceSlides = [] }) {
       zIndex:"3"}
   : { display: "none" };
   const toggle = () => { 
-    const animationElement = !state.animationElement;
+    
     setState({
-      animationElement
+      animationElement: false
     });
    
     console.log(state.animationElement);
   };
   const toggleStart = () => { 
-    const animationElement = !state.animationElement;
+   
     setState({
-      animationElement
+      animationElement: true
     });
 
-    var date = Date.now ();
-    while (Date.now () - date < 2000);  
     
-    console.log("test1");
    
   };
 
   const func = () =>{
 
-    toggleStart();
+     toggleStart();
 
-    updateSlide();
   }
   
   return (
+
+    <div>
     
     <div style={{ width: "80%", height: "500px", margin: "0 auto" }}>
       <Carousel
@@ -123,6 +122,8 @@ export default function Example({ slides: sourceSlides = [] }) {
         currentSlide={currentSlide >= slides.length ? 0 : currentSlide}
         goToSlide={handleClick}
       />
+
+      </div>
 
       <div
         style={{
@@ -221,10 +222,11 @@ export default function Example({ slides: sourceSlides = [] }) {
                 </button>
 
                 <button
-                  
+                  onClick = "window.open('https://www.flipkart.com/')"
                   type="button"
                   className="btn btn-default"
                 >
+                  //https://www.flipkart.com/
                   Go To Landing Page
                 </button>
               </div>

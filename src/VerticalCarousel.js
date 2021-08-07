@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, Component } from "react";
 import styled from "@emotion/styled";
 import Slide from "./Slide";
 import PropTypes from "prop-types";
+import Dots from "./Carousel/Dots";
 import "./index.css";
 let interval=null;
 const Wrapper = styled.div`
@@ -45,7 +46,11 @@ class VerticalCarousel extends React.Component {
     animationElement : true,
     modalVisible:false,
     currRef: "",
+
     text :"Pause",
+
+    currRefLink: ""
+
   };
  
   componentDidMount = () => {
@@ -90,6 +95,7 @@ class VerticalCarousel extends React.Component {
       PropTypes.shape({
         key: PropTypes.any,
         extraRef: PropTypes.any,
+        extraRefLink: PropTypes.any,
         content: PropTypes.object,
       })
     ).isRequired,
@@ -151,16 +157,23 @@ class VerticalCarousel extends React.Component {
     return presentableSlides;
   }
 
+  getSlides(){
+    const { slides } = this.props;
+    return slides;
+  }
+
   openModal =()=> {
     const { slides } = this.props;
     this.setState({
       modalVisible: !this.state.modalVisible,
       animationElement : !this.state.animationElement,
-      currRef : slides[this.state.index].extraRef
+      currRef : slides[this.state.index].extraRef,
+      currRefLink : slides[this.state.index].extraRefLink
     });
 
     console.log(this.state.modalVisible)
   };
+  
   
   render() {
     const { animationConfig, offsetRadius, showNavigation } = this.props;
@@ -184,6 +197,8 @@ class VerticalCarousel extends React.Component {
     
 
     return (
+
+      
       
       <React.Fragment>
         <div style={{
@@ -224,9 +239,17 @@ class VerticalCarousel extends React.Component {
               onClick ={this.openModal}
         
             />
+            
            
           ))}
+
+          
+         
         </Wrapper>
+
+     
+
+        
   
   
         <div id="myModal"
@@ -276,6 +299,7 @@ class VerticalCarousel extends React.Component {
 
                <a
                 data-effect="mfp-zoom-in"
+                onClick = {()=> window.open(this.state.currRefLink, "_blank")}
                   style={{
                     display: "block",
                     width: "140px",
@@ -289,7 +313,8 @@ class VerticalCarousel extends React.Component {
                     fontSize:"15px",
                     fontFamily:"sans-serif",
                     float:"right",
-                    transition:"popup"
+                    transition:"popup",
+                    cursor:"pointer"
                   }}
                 >
             Go To Landing Page
@@ -301,6 +326,20 @@ class VerticalCarousel extends React.Component {
  
        
         {navigationButtons}
+
+        <div className="dots">
+          
+          {this.getSlides().length &&
+            this.getSlides().map((s, i) => {
+              return (
+                <div
+                  key={i}
+                  onClick={() => this.setState({index: i})}
+                  className={`dot ${i === this.state.index ? "dot-active" : ""}`}
+                />
+              );
+            })}
+        </div>
       </React.Fragment>
     );
   }
