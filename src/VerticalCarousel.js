@@ -204,6 +204,7 @@ class VerticalCarousel extends React.Component {
         <div style={{
           float:"right",
           display:"inline",
+          marginRight: "5%"
         }}>
          <button style={{
            display: "block",
@@ -219,6 +220,7 @@ class VerticalCarousel extends React.Component {
            fontFamily:"sans-serif",
            float:"right",
            margin :"2%",
+          
         
       
           
@@ -247,7 +249,7 @@ class VerticalCarousel extends React.Component {
          
         </Wrapper>
 
-        <div className="dots">
+        <div className="dots" style={{marginTop: "2%"}}>
           
           {this.getSlides().length &&
             this.getSlides().map((s, i) => {

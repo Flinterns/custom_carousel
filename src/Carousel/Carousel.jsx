@@ -106,6 +106,21 @@ export default function Example({ slides: sourceSlides = [] }) {
   return (
 
     <div>
+
+<button onClick={()=> toggle()} style={{  display: "block",
+           cursor:"pointer",
+           width: "140px",
+           height: "50px",
+           background: "#4E9CAF",
+           padding: "5px",
+           textAlign: "center",
+           borderRadius: "5px",
+           color: "white",
+           fontSize:"18px",
+           fontFamily:"sans-serif",
+           float:"right",
+           margin :"2%",}} >Pause</button>
+             
     
     <div style={{ width: "80%", height: "500px", margin: "0 auto" }}>
       <Carousel
@@ -122,6 +137,21 @@ export default function Example({ slides: sourceSlides = [] }) {
         currentSlide={currentSlide >= slides.length ? 0 : currentSlide}
         goToSlide={handleClick}
       />
+
+<button onClick={()=> func()} style={{  display: "block",
+           cursor:"pointer",
+           width: "140px",
+           height: "50px",
+           background: "#4E9CAF",
+           padding: "5px",
+           textAlign: "center",
+           borderRadius: "5px",
+           color: "white",
+           marginBottom: "5%",
+           fontSize:"18px",
+           fontFamily:"sans-serif",
+           float:"right",
+           margin :"2%",}} >Start</button>
 
       </div>
 
@@ -184,8 +214,7 @@ export default function Example({ slides: sourceSlides = [] }) {
              }}
             >
              </img>
-             <button onClick={()=> toggle() } >Pause</button>
-             <button onClick={()=> func()} >Start</button>
+            
              
              </div>
           </div>
@@ -217,6 +246,7 @@ export default function Example({ slides: sourceSlides = [] }) {
                   onClick={openModal}
                   type="button"
                   className="btn btn-default"
+                  
                 >
                   Close
                 </button>
@@ -233,6 +263,8 @@ export default function Example({ slides: sourceSlides = [] }) {
             </div>
           </div>
         </div>
+
+    
   </div>
   );
   }
