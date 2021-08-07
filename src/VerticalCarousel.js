@@ -11,14 +11,13 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 50%;
-
 `;
 
 const NavigationButtons = styled.div`
-  position: absolute;
+ 
   display: flex;
-  height: 70px;
-  margin: 10% 5%;
+  height: 50px;
+  margin: 8% 5%;
   width: 90%;
   justify-content: space-between;
   z-index: 1000;
@@ -47,7 +46,11 @@ class VerticalCarousel extends React.Component {
     animationElement : true,
     modalVisible:false,
     currRef: "",
+
+    text :"Pause",
+
     currRefLink: ""
+
   };
  
   componentDidMount = () => {
@@ -121,7 +124,8 @@ class VerticalCarousel extends React.Component {
   };
   toggle = () => { 
     this.setState({
-      animationElement : !this.state.animationElement
+      animationElement : !this.state.animationElement,
+      text: this.state.animationElement?"Play":"Pause",
     })
   };
 
@@ -178,8 +182,14 @@ class VerticalCarousel extends React.Component {
     if (showNavigation) {
       navigationButtons = (
         <NavigationButtons>
-          <NavBtn onClick={() => this.moveSlide(1)}>&#8593;</NavBtn>
-          <NavBtn onClick={() => this.moveSlide(-1)}>&#8595;</NavBtn>
+          <NavBtn style={{ position:"absolute",
+             top:"35%",
+             left:"90%",
+      }} onClick={() => this.moveSlide(1)}>&#8593;</NavBtn>
+          <NavBtn style={{ position:"absolute",
+             top:"35%",
+      }}
+            onClick={() => this.moveSlide(-1)}>&#8595;</NavBtn>
         </NavigationButtons>
       );
     }
@@ -191,13 +201,36 @@ class VerticalCarousel extends React.Component {
       
       
       <React.Fragment>
+        <div style={{
+          float:"right",
+          display:"inline",
+        }}>
+         <button style={{
+           display: "block",
+           cursor:"pointer",
+           width: "140px",
+           height: "50px",
+           background: "#4E9CAF",
+           padding: "5px",
+           textAlign: "center",
+           borderRadius: "5px",
+           color: "white",
+           fontSize:"18px",
+           fontFamily:"sans-serif",
+           float:"right",
+           margin :"2%",
         
+      
+          
+         }}
+         
+         onClick={()=> this.toggle() }>{this.state.text}</button>
+        </div>
         <Wrapper  onClick ={this.openModal}     
 >
           {this.getPresentableSlides().map((slide, presentableIndex) => (
             <Slide
               key={slide.key}
-
               content={slide.content}
               moveSlide={this.moveSlide}
               offsetRadius={this.clampOffsetRadius(offsetRadius)}
@@ -223,16 +256,17 @@ class VerticalCarousel extends React.Component {
           role="dialog"
           style ={{
           position: "absolute", 
-          top:"10%",
-          left:"37%",
+          top:"4%",
+          left:"22%",
           borderRadius: "5px",
           zIndex:"3",
         padding: "10px",
         background: "#fff",
         borderradius: "5px",
-        width: "30%",
+        width: "55%",
         transition: "all 5s ease-in-out",
       display: this.state.modalVisible? 'block' : 'none'
+        
 
     }}
         >
@@ -255,7 +289,7 @@ class VerticalCarousel extends React.Component {
 
               </div > 
               <div className="modal-body">
-              <img src={this.state.currRef} alt="7" 
+            <img src= {require('./img/img1.jpeg')} alt="7" 
                 style={{  maxWidth:"100%",
                 maxHieght:"100%",
                 }}
@@ -290,7 +324,7 @@ class VerticalCarousel extends React.Component {
           </div>
         </div>
  
-        <button style={{cursor:"pointer" }}onClick={()=> this.toggle() } >Pause</button>
+       
         {navigationButtons}
 
         <div className="dots">

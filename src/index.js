@@ -100,21 +100,43 @@ console.log(slides);
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { showVertical: false };
+    this.state = { showVertical: false,
+                   text :"Vertical" };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
     this.setState((prevState) => ({
       showVertical: !prevState.showVertical,
+      text : this.state.showVertical?"Vertical":"Horizontal",
     }));
   }
   render() {
     return (
-      <div>
-        <button onClick={this.handleClick}> Choose Carousel Orientation</button>
-
+      <div style ={{
+        display:"flex"
+      }}>
+        <div style={{display:"inline",
+        
+        }}>
+        <button 
+          style={{
+           cursor:"pointer",
+           width: "140px",
+           height: "50px",
+           background: "#4E9CAF",
+           padding: "5px",
+           textAlign: "center",
+           borderRadius: "5px",
+           color: "white",
+           fontSize:"18px",
+           fontFamily:"sans-serif",
+           margin :"2%",
+        
+          }}  onClick={this.handleClick}> {this.state.text}</button>
+         
         {this.state.showVertical ? <ExampleV /> : <Carousel slides={slides} />}
+        </div>
       </div>
     );
   }

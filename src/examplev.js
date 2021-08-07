@@ -6,8 +6,11 @@ import { config } from "react-spring";
 let slides = [
   {
     key: uuidv4(),
+
+
     extraRef: "https://rukminim1.flixcart.com/flap/1200/280/image/4abbdcd0a4ad2a6b.jpg?q=50" ,
     extraRefLink: 'https://www.flipkart.com/',
+
     content: <img src="https://rukminim1.flixcart.com/flap/1200/280/image/4abbdcd0a4ad2a6b.jpg?q=50" alt="1" />
   },
   {
@@ -74,7 +77,9 @@ export default class ExampleV extends Component {
   ? { position:  "absolute", 
       top:"10%",
       left:"40%",
-      zIndex:"3"}
+      zIndex:"3",
+      width: "50%",
+    }
   : { display: "none" };
   render() {
     return (
@@ -96,7 +101,7 @@ export default class ExampleV extends Component {
           showNavigation={this.state.showNavigation}
           animationConfig={this.state.config}
         />
-      <div
+      {/* <div
           id="myModal"
           className="modal fade in"
           role="dialog"
@@ -136,8 +141,8 @@ export default class ExampleV extends Component {
             </div>
           </div>
         </div>
-  </div>
-   
+ */}
+    </div> 
 
     );
   }
