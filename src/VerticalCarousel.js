@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 50%;
+ 
 `;
 
 const NavigationButtons = styled.div`
@@ -183,11 +184,11 @@ class VerticalCarousel extends React.Component {
       navigationButtons = (
         <NavigationButtons>
           <NavBtn style={{ position:"absolute",
-             top:"35%",
+             top:"20%",
              left:"90%",
       }} onClick={() => this.moveSlide(1)}>&#8593;</NavBtn>
           <NavBtn style={{ position:"absolute",
-             top:"35%",
+             top:"20%",
       }}
             onClick={() => this.moveSlide(-1)}>&#8595;</NavBtn>
         </NavigationButtons>
@@ -198,19 +199,16 @@ class VerticalCarousel extends React.Component {
 
     return (
 
-      <div>
+      
       
       <React.Fragment>
-        <div style={{
-          float:"right",
-          display:"inline",
-        }}>
-         <button style={{
-           display: "block",
+       
+         <img src="https://static.thenounproject.com/png/2283501-200.png" 
+         style={{
+          
            cursor:"pointer",
-           width: "140px",
-           height: "50px",
-           background: "#4E9CAF",
+           width: "40px",
+           height: "40px",
            padding: "5px",
            textAlign: "center",
            borderRadius: "5px",
@@ -218,14 +216,19 @@ class VerticalCarousel extends React.Component {
            fontSize:"18px",
            fontFamily:"sans-serif",
            float:"right",
-           margin :"2%",
-        
-      
-          
+           margin :"2%",   
+           position:"absolute",
+           top:"28%",
+           left:"90%",
+           zIndex:"3",
+           
          }}
+
          
-         onClick={()=> this.toggle() }>{this.state.text}</button>
-        </div>
+         onClick={()=> this.toggle() }>
+
+         </img>
+        
         <Wrapper  onClick ={this.openModal}     
 >
           {this.getPresentableSlides().map((slide, presentableIndex) => (
@@ -237,7 +240,7 @@ class VerticalCarousel extends React.Component {
               index={presentableIndex}
               animationConfig={animationConfig}
               onClick ={this.openModal}
-        
+               
             />
             
            
@@ -272,15 +275,13 @@ class VerticalCarousel extends React.Component {
           left:"22%",
           borderRadius: "5px",
           zIndex:"3",
-        padding: "10px",
-        background: "#fff",
-        borderradius: "5px",
-        width: "55%",
-        transition: "all 5s ease-in-out",
-      display: this.state.modalVisible? 'block' : 'none'
-        
-
-    }}
+          padding: "10px",
+          background: "#fff",
+          borderradius: "5px",
+          width: "55%",
+          transition: "all 5s ease-in-out",
+          display: this.state.modalVisible? 'block' : 'none'
+        }}
         >
           <div className="modal-dialog">
             <div className="modal-content">
@@ -341,7 +342,7 @@ class VerticalCarousel extends React.Component {
 
       
       </React.Fragment>
-      </div>
+ 
     );
   }
 }

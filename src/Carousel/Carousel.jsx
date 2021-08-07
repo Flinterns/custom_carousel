@@ -50,17 +50,16 @@ export default function Example({ slides: sourceSlides = [] }) {
     // eslint-disable-next-line
     if(state.animationElement){
     interval = setInterval(updateSlide, 3000);
-    }
     
+    }
     return () => {
       clearInterval(interval);
     };
-
     
     
   }, []);
 
-  useEffect(() => {
+  useEffect(()=> {
     if(state.animationElement){
     setState({ ...state, goToSlide: currentSlide });
     }
@@ -79,6 +78,7 @@ export default function Example({ slides: sourceSlides = [] }) {
       left:"40%",
       zIndex:"3"}
   : { display: "none" };
+
   const toggle = () => { 
     
     setState({
@@ -93,21 +93,16 @@ export default function Example({ slides: sourceSlides = [] }) {
       animationElement: true
     });
 
-    
-   
+  
   };
 
-  const func = () =>{
-
-     toggleStart();
-
-  }
-  
   return (
-
-    <div>
-    
-    <div style={{ width: "80%", height: "500px", margin: "0 auto" }}>
+  <div style={{ width: "80%", height: "300px", position:"absolute",
+    top:"10%",
+    left:"10%"
+          
+    }}>
+      
       <Carousel
         ref={ref}
         slides={slides}
@@ -115,6 +110,7 @@ export default function Example({ slides: sourceSlides = [] }) {
         offsetRadius={state.offsetRadius}
         showNavigation={state.showNavigation}
         animationConfig={state.config}
+
       />
 
       <Dots
@@ -123,7 +119,7 @@ export default function Example({ slides: sourceSlides = [] }) {
         goToSlide={handleClick}
       />
 
-      </div>
+    
 
       <div
         style={{
@@ -185,54 +181,13 @@ export default function Example({ slides: sourceSlides = [] }) {
             >
              </img>
              <button onClick={()=> toggle() } >Pause</button>
-             <button onClick={()=> func()} >Start</button>
+             <button onClick={()=> toggleStart()} >Start</button>
              
              </div>
           </div>
          
   </div>
 
-  <div
-          id="myModal"
-          className="modal fade in"
-          role="dialog"
-          style={styles}
-        >
-          <div className="modal-dialog">
-            <div className="modal-content">
-              <div className="modal-header">
-                <button
-                  type="button"
-                  onClick={openModal}
-                  className="close"
-                >
-                  &times;
-                </button>
-                <h4 className="modal-title">Modal Header</h4>
-              </div>
-              <div className="modal-body">
-              <img src="https://picsum.photos/500/300/?random" alt="7" /></div>
-              <div className="modal-footer">
-                <button
-                  onClick={openModal}
-                  type="button"
-                  className="btn btn-default"
-                >
-                  Close
-                </button>
-
-                <button
-                  onClick = "window.open('https://www.flipkart.com/')"
-                  type="button"
-                  className="btn btn-default"
-                >
-                  //https://www.flipkart.com/
-                  Go To Landing Page
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
   </div>
   );
   }

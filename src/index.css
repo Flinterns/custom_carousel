@@ -8,6 +8,7 @@ html, body {
   overflow-x: hidden;
   max-height: 100vh;
   overflow-y: hidden;
+ 
   }
   .box {
     width: 40%;

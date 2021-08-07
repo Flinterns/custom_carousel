@@ -114,7 +114,7 @@ class App extends React.Component {
   render() {
     return (
      
-        <div >
+        <div>
         <button 
           style={{
            cursor:"pointer",
@@ -127,7 +127,7 @@ class App extends React.Component {
            color: "white",
            fontSize:"18px",
            fontFamily:"sans-serif",
-           margin :"2%",
+           margin :"1%",
         
           }}  onClick={this.handleClick}> {this.state.text}</button>
          

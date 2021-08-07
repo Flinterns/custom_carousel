@@ -4,15 +4,15 @@ import { Spring, animated } from "react-spring/renderprops";
 import { withGesture } from "react-with-gesture";
 
 const SlideContainer = styled.div`
-  position: absolute;
-  height: 70%;
-  top: 50%;
+  position:absolute;
+  height: 66%;
+  top: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   transform-origin: 50% 50%;
   cursor: pointer;
-  
+  margin:"2%"
 `;
 
 const SlideCard = styled.div`
@@ -27,7 +27,7 @@ const SlideCard = styled.div`
   align-items: center;
   justify-content: center;
   transform-origin: 50% 50%;
- 
+  
 `;
 
 function Slide({
@@ -87,7 +87,10 @@ function Slide({
         opacity: distanceFactor * distanceFactor,
       }}
       config={animationConfig}
-      style ={{cursor: "pointer"}}
+      style ={{cursor: "pointer",
+            position:"absolute",
+            top:"10%",
+    }}
     >
       {(style) => (
         <SlideContainer
