@@ -11,7 +11,7 @@ const slides = [
     key: uuidv4(),
     content: (
       <img
-        src="https://rukminim1.flixcart.com/flap/1200/280/image/4abbdcd0a4ad2a6b.jpg?q=50"
+        src="https://rukminim1.flixcart.com/flap/1100/400/image/4abbdcd0a4ad2a6b.jpg?q=50"
         alt="1"
       />
     ),
@@ -21,7 +21,7 @@ const slides = [
     key: uuidv4(),
     content: (
       <img
-        src="https://rukminim1.flixcart.com/flap/1200/280/image/aa9606c4e9186450.jpg?q=50"
+        src="https://rukminim1.flixcart.com/flap/1100/400/image/aa9606c4e9186450.jpg?q=50"
         alt="2"
       />
     ),
@@ -31,7 +31,7 @@ const slides = [
     key: uuidv4(),
     content: (
       <img
-        src="https://rukminim1.flixcart.com/flap/1200/280/image/a4f65e0b2afb8b8f.jpg?q=50"
+        src="https://rukminim1.flixcart.com/flap/1100/400/image/a4f65e0b2afb8b8f.jpg?q=50"
         alt="3"
       />
     ),
@@ -41,7 +41,7 @@ const slides = [
     key: uuidv4(),
     content: (
       <img
-        src="https://rukminim1.flixcart.com/flap/1200/280/image/3ef6b71c7dda2ebe.jpg?q=50"
+        src="https://rukminim1.flixcart.com/flap/1100/400/image/3ef6b71c7dda2ebe.jpg?q=50"
         alt="4"
       />
     ),
@@ -51,7 +51,7 @@ const slides = [
     key: uuidv4(),
     content: (
       <img
-        src="https://rukminim1.flixcart.com/flap/1200/280/image/bbbf1d709468c0e4.jpg?q=50"
+        src="https://rukminim1.flixcart.com/flap/1100/400/image/bbbf1d709468c0e4.jpg?q=50"
         alt="5"
       />
     ),
@@ -61,7 +61,7 @@ const slides = [
     key: uuidv4(),
     content: (
       <img
-        src="https://rukminim1.flixcart.com/flap/1200/280/image/a4aa90e138dde3c6.jpg?q=50"
+        src="https://rukminim1.flixcart.com/flap/1100/400/image/a4aa90e138dde3c6.jpg?q=50"
         alt="6"
       />
     ),
@@ -71,7 +71,7 @@ const slides = [
     key: uuidv4(),
     content: (
       <img
-        src="https://rukminim1.flixcart.com/flap/1200/280/image/3ef6b71c7dda2ebe.jpg?q=50"
+        src="https://rukminim1.flixcart.com/flap/1100/400/image/3ef6b71c7dda2ebe.jpg?q=50"
         alt="7"
       />
     ),
@@ -81,7 +81,7 @@ const slides = [
     key: uuidv4(),
     content: (
       <img
-        src="https://rukminim1.flixcart.com/flap/1200/280/image/3419f1a004b7504b.jpg?q=50"
+        src="https://rukminim1.flixcart.com/flap/1100/400/image/3419f1a004b7504b.jpg?q=50"
         alt="8"
       />
     ),
@@ -115,21 +115,25 @@ class App extends React.Component {
     return (
      
         <div>
-        <button 
+        <img src="http://cdn.onlinewebfonts.com/svg/img_17344.png"
           style={{
            cursor:"pointer",
-           width: "140px",
-           height: "50px",
-           background: "#4E9CAF",
+           width: "25px",
+           height: "25px",
            padding: "5px",
            textAlign: "center",
            borderRadius: "5px",
            color: "white",
            fontSize:"18px",
            fontFamily:"sans-serif",
-           margin :"1%",
-        
-          }}  onClick={this.handleClick}> {this.state.text}</button>
+           margin :"1% auto",
+           display:"center",
+           position:"absolute",
+           left:"8%",
+           top:"19%",
+           zIndex :"3",
+      
+          }}  onClick={this.handleClick}></img>
          
         {this.state.showVertical ? <ExampleV /> : <Carousel slides={slides} />}
         </div>

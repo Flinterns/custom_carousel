@@ -99,7 +99,8 @@ export default function Example({ slides: sourceSlides = [] }) {
   return (
   <div style={{ width: "80%", height: "300px", position:"absolute",
     top:"10%",
-    left:"10%"
+    left:"10%",
+    
           
     }}>
       
@@ -128,6 +129,7 @@ export default function Example({ slides: sourceSlides = [] }) {
           width: "50%",
           display: "flex",
           justifyContent: "space-around",
+          cursor:"pointer",
         }}
       >
         <div
@@ -143,18 +145,19 @@ export default function Example({ slides: sourceSlides = [] }) {
           }}
         >
           <div style={{
-                  background:"white",
+                 
                   height:"40px",
                   width:"40px",
                   position:"absolute",
-                  left:"4%",
+                  left:"-3%",
                   top:"45%",
+                  pointer:"cursor"
 
           }}>
-            <img src="https://img.icons8.com/material-outlined/24/000000/long-arrow-left.png"
+            <img src="https://image.flaticon.com/icons/png/512/60/60775.png"
                style={{ width:"30px",
                height:"30px", 
-              margin:"5px",
+              pointer:"cursor"
              }}
              onClick={updateNeg}
            >
@@ -162,26 +165,53 @@ export default function Example({ slides: sourceSlides = [] }) {
           </img>
           </div>
             <div style={{
-                  background:"white",
+                
                   height:"40px",
                   width:"40px",
                   margin:"0%",
                   position:"absolute",
-                  left:"91%",
+                  left:"98%",
                   top:"45%",
 
           }}>
            
-            <img src="https://img.icons8.com/material-sharp/24/000000/long-arrow-right.png"
+            <img src="https://image.flaticon.com/icons/png/512/60/60758.png"
               onClick={updateSlide}
               style={{ width:"30px",
                height:"30px", 
               margin:"5px",
+              pointer:"cursor"
              }}
+
             >
              </img>
-             <button onClick={()=> toggle() } >Pause</button>
-             <button onClick={()=> toggleStart()} >Start</button>
+             <img src="https://image.flaticon.com/icons/png/512/61/61039.png"
+             onClick={()=> toggle() }
+               style ={{
+                  cursor:"pointer",
+                  height:"30px",
+                  width:"30px",
+                  margin:"0%",
+                  position:"absolute",
+                  right:"70%",
+                  top:"180%"
+               }}>
+             </img>
+            
+             <img src="https://image.flaticon.com/icons/png/512/0/375.png"
+             onClick={()=> toggleStart()}
+               style ={{
+                  cursor:"pointer",
+                  height:"30px",
+                  width:"30px",
+                  margin:"0%",
+                  position:"absolute",
+                  left:"40%",
+                  top:"180%"
+                 
+               }}>
+             </img>
+             
              
              </div>
           </div>

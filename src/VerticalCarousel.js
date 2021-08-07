@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 `;
 
 const NavigationButtons = styled.div`
- 
+
   display: flex;
   height: 50px;
   margin: 8% 5%;
@@ -184,11 +184,14 @@ class VerticalCarousel extends React.Component {
       navigationButtons = (
         <NavigationButtons>
           <NavBtn style={{ position:"absolute",
-             top:"20%",
-             left:"90%",
+             top:"28%",
+             left:"88%",
+             cursor:"pointer"
       }} onClick={() => this.moveSlide(1)}>&#8593;</NavBtn>
           <NavBtn style={{ position:"absolute",
-             top:"20%",
+             top:"28%",
+             left:"8%",
+             cursor:"pointer"
       }}
             onClick={() => this.moveSlide(-1)}>&#8595;</NavBtn>
         </NavigationButtons>
@@ -202,30 +205,45 @@ class VerticalCarousel extends React.Component {
       
       
       <React.Fragment>
-       
-         <img src="https://static.thenounproject.com/png/2283501-200.png" 
+       <div style={{
+         height:"18%"
+       }}>
+       </div>
+         <img src="https://image.flaticon.com/icons/png/512/61/61039.png" 
          style={{
           
            cursor:"pointer",
-           width: "40px",
-           height: "40px",
-           padding: "5px",
-           textAlign: "center",
-           borderRadius: "5px",
-           color: "white",
-           fontSize:"18px",
-           fontFamily:"sans-serif",
-           float:"right",
-           margin :"2%",   
+           width: "30px",
+           height: "30px",
            position:"absolute",
-           top:"28%",
-           left:"90%",
+           top:"41.5%",
+           left:"85.5%",
            zIndex:"3",
            
          }}
 
          
          onClick={()=> this.toggle() }>
+
+
+         </img>
+         <img src="https://image.flaticon.com/icons/png/512/0/375.png" 
+         style={{
+          
+           cursor:"pointer",
+           width: "30px",
+           height: "30px",
+           position:"absolute",
+           top:"41.5%",
+           left:"88%",
+           zIndex:"3",
+
+           
+         }}
+
+         
+         onClick={()=> this.toggle() }>
+           
 
          </img>
         
@@ -293,7 +311,8 @@ class VerticalCarousel extends React.Component {
                        background:"white",
                        fontSize:"40px",
                        border:"white",
-                       color:"grey"
+                       color:"grey",
+                       cursor:"pointer"
     
                   }}
                 >
@@ -330,7 +349,7 @@ class VerticalCarousel extends React.Component {
                     cursor:"pointer"
                   }}
                 >
-            Go To Landing Page
+            Explore More
                 </a>
               </div>
             </div>

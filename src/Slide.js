@@ -4,29 +4,25 @@ import { Spring, animated } from "react-spring/renderprops";
 import { withGesture } from "react-with-gesture";
 
 const SlideContainer = styled.div`
-  position:absolute;
-  height: 66%;
-  top: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-origin: 50% 50%;
+ 
+  height: 78%;
   cursor: pointer;
-  margin:"2%"
+  position:absolute;
+  top:150%;
+  transform : 50% 50%
+ 
 `;
 
 const SlideCard = styled.div`
-  position: relative;
-  max-width: 50%;
-  min-width: 20%;
-  width: 100%;
-  height: 100%;
+
+ 
+  width: 87vw;
+  height: 30vh;
   background: white;
   font-size: 35px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-origin: 50% 50%;
+  transform-origin : 50% 50%;
+ 
   
 `;
 
