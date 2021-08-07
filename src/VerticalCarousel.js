@@ -198,7 +198,7 @@ class VerticalCarousel extends React.Component {
 
     return (
 
-      
+      <div>
       
       <React.Fragment>
         <div style={{
@@ -247,7 +247,19 @@ class VerticalCarousel extends React.Component {
          
         </Wrapper>
 
-     
+        <div className="dots">
+          
+          {this.getSlides().length &&
+            this.getSlides().map((s, i) => {
+              return (
+                <div
+                  key={i}
+                  onClick={() => this.setState({index: i})}
+                  className={`dot ${i === this.state.index ? "dot-active" : ""}`}
+                />
+              );
+            })}
+        </div>
 
         
   
@@ -327,20 +339,9 @@ class VerticalCarousel extends React.Component {
        
         {navigationButtons}
 
-        <div className="dots">
-          
-          {this.getSlides().length &&
-            this.getSlides().map((s, i) => {
-              return (
-                <div
-                  key={i}
-                  onClick={() => this.setState({index: i})}
-                  className={`dot ${i === this.state.index ? "dot-active" : ""}`}
-                />
-              );
-            })}
-        </div>
+      
       </React.Fragment>
+      </div>
     );
   }
 }

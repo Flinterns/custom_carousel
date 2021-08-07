@@ -113,12 +113,8 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div style ={{
-        display:"flex"
-      }}>
-        <div style={{display:"inline",
-        
-        }}>
+     
+        <div >
         <button 
           style={{
            cursor:"pointer",
@@ -137,7 +133,7 @@ class App extends React.Component {
          
         {this.state.showVertical ? <ExampleV /> : <Carousel slides={slides} />}
         </div>
-      </div>
+      
     );
   }
 }
