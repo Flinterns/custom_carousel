@@ -9,49 +9,49 @@ let slides = [
 
 
     extraRef: "https://rukminim1.flixcart.com/flap/1200/200/image/4abbdcd0a4ad2a6b.jpg?q=50" ,
-    extraRefLink: 'https://www.flipkart.com/',
-
-    content: <img src="https://rukminim1.flixcart.com/flap/1200/400/image/4abbdcd0a4ad2a6b.jpg?q=50" alt="1" />
+    extraRefLink: 'https://www.flipkart.com/mobiles/~cs-58c1w11o7o/pr?sid=tyy%2C4io&collection-tab-name=Infinix+Smart+5A&param=768&otracker=hp_bannerads_2_3.bannerAdCard.BANNERADS_alt_N5E33OVMWFPH',
+    content: <img src="https://rukminim1.flixcart.com/flap/1200/400/image/a4f65e0b2afb8b8f.jpg?q=50" alt="1" />
   },
   {
     key: uuidv4(),
     extraRef: "https://rukminim1.flixcart.com/flap/1200/400/image/aa9606c4e9186450.jpg?q=50",
-    content: <img src="https://rukminim1.flixcart.com/flap/1200/400/image/aa9606c4e9186450.jpg?q=50" alt="2" />
+    extraRefLink: 'https://www.flipkart.com/mobiles/~cs-58c1w11o7o/pr?sid=tyy%2C4io&collection-tab-name=Infinix+Smart+5A&param=768&otracker=hp_bannerads_2_3.bannerAdCard.BANNERADS_alt_N5E33OVMWFPH',
+    content: <img src="https://rukminim1.flixcart.com/flap/1200/560/image/bf9749d334fea9bc.jpg?q=50" alt="2" />
   },
   {
     key: uuidv4(),
     extraRef: "https://rukminim1.flixcart.com/flap/1200/400/image/a4f65e0b2afb8b8f.jpg?q=50",
-    extraRefLink: 'https://www.flipkart.com/',
-    content: <img src="https://rukminim1.flixcart.com/flap/1200/400/image/a4f65e0b2afb8b8f.jpg?q=50" alt="3" />
+    extraRefLink: 'https://www.flipkart.com/mobiles/~cs-58c1w11o7o/pr?sid=tyy%2C4io&collection-tab-name=Infinix+Smart+5A&param=768&otracker=hp_bannerads_2_3.bannerAdCard.BANNERADS_alt_N5E33OVMWFPH',
+    content: <img src="https://rukminim1.flixcart.com/flap/1200/400/image/4abbdcd0a4ad2a6b.jpg?q=50" alt="3" />
   },
   {
     key: uuidv4(),
     extraRef: "https://rukminim1.flixcart.com/flap/1200/400/image/3ef6b71c7dda2ebe.jpg?q=50",
-    extraRefLink: 'https://www.flipkart.com/',
+    extraRefLink: 'https://www.flipkart.com/mobiles/~cs-58c1w11o7o/pr?sid=tyy%2C4io&collection-tab-name=Infinix+Smart+5A&param=768&otracker=hp_bannerads_2_3.bannerAdCard.BANNERADS_alt_N5E33OVMWFPH',
     content: <img src="https://rukminim1.flixcart.com/flap/1200/400/image/3ef6b71c7dda2ebe.jpg?q=50" alt="4" />
   },
   {
     key: uuidv4(),
     extraRef: "https://rukminim1.flixcart.com/flap/1200/400/image/bbbf1d709468c0e4.jpg?q=50",
-    extraRefLink: 'https://www.flipkart.com/',
-    content: <img src="https://rukminim1.flixcart.com/flap/1200/400/image/bbbf1d709468c0e4.jpg?q=50" alt="5" />
+    extraRefLink: 'https://www.flipkart.com/mobiles/~cs-58c1w11o7o/pr?sid=tyy%2C4io&collection-tab-name=Infinix+Smart+5A&param=768&otracker=hp_bannerads_2_3.bannerAdCard.BANNERADS_alt_N5E33OVMWFPH',
+    content: <img src="https://rukminim1.flixcart.com/flap/3376/560/image/b94bfffcacfdf747.jpg?q=50" alt="5" />
   },
   {
     key: uuidv4(),
     extraRef:"https://rukminim1.flixcart.com/flap/1200/400/image/a4aa90e138dde3c6.jpg?q=50" ,
-    extraRefLink: 'https://www.flipkart.com/',
+    extraRefLink: 'https://www.flipkart.com/mobiles/~cs-58c1w11o7o/pr?sid=tyy%2C4io&collection-tab-name=Infinix+Smart+5A&param=768&otracker=hp_bannerads_2_3.bannerAdCard.BANNERADS_alt_N5E33OVMWFPH',
     content: <img src="https://rukminim1.flixcart.com/flap/1200/400/image/a4aa90e138dde3c6.jpg?q=50" alt="6" />
   },
   {
     key: uuidv4(),
     extraRef:"https://rukminim1.flixcart.com/flap/1200/400/image/3ef6b71c7dda2ebe.jpg?q=50",
-    extraRefLink: 'https://www.flipkart.com/',
+    extraRefLink: 'https://www.flipkart.com/mobiles/~cs-58c1w11o7o/pr?sid=tyy%2C4io&collection-tab-name=Infinix+Smart+5A&param=768&otracker=hp_bannerads_2_3.bannerAdCard.BANNERADS_alt_N5E33OVMWFPH',
     content: <img src="https://rukminim1.flixcart.com/flap/1200/400/image/3ef6b71c7dda2ebe.jpg?q=50" alt="7" />
   },
   {
     key: uuidv4(),
     extraRef: "https://rukminim1.flixcart.com/flap/1200/400/image/3419f1a004b7504b.jpg?q=50",
-    extraRefLink: 'https://www.flipkart.com/',
+    extraRefLink: 'https://www.flipkart.com/mobiles/~cs-58c1w11o7o/pr?sid=tyy%2C4io&collection-tab-name=Infinix+Smart+5A&param=768&otracker=hp_bannerads_2_3.bannerAdCard.BANNERADS_alt_N5E33OVMWFPH',
     content: <img src="https://rukminim1.flixcart.com/flap/1200/400/image/3419f1a004b7504b.jpg?q=50" alt="8" />
   }
 

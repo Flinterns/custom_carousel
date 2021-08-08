@@ -21,7 +21,7 @@ const slides = [
     key: uuidv4(),
     content: (
       <img
-        src="https://rukminim1.flixcart.com/flap/1100/400/image/aa9606c4e9186450.jpg?q=50"
+        src="https://rukminim1.flixcart.com/flap/1100/400/image/a4f65e0b2afb8b8f.jpg?q=50"
         alt="2"
       />
     ),
@@ -61,7 +61,7 @@ const slides = [
     key: uuidv4(),
     content: (
       <img
-        src="https://rukminim1.flixcart.com/flap/1100/400/image/a4aa90e138dde3c6.jpg?q=50"
+        src="https://rukminim1.flixcart.com/flap/1100/400/image/b94bfffcacfdf747.jpg?q=50"
         alt="6"
       />
     ),
@@ -81,7 +81,7 @@ const slides = [
     key: uuidv4(),
     content: (
       <img
-        src="https://rukminim1.flixcart.com/flap/1100/400/image/3419f1a004b7504b.jpg?q=50"
+        src="https://rukminim1.flixcart.com/flap/1100/400/image/bf9749d334fea9bc.jpg?q=50"
         alt="8"
       />
     ),

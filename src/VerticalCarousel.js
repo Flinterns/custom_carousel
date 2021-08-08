@@ -191,7 +191,7 @@ class VerticalCarousel extends React.Component {
           <NavBtn style={{ position:"absolute",
              top:"28%",
              left:"8%",
-             cursor:"pointer"
+             cursor:"pointer",
       }}
             onClick={() => this.moveSlide(-1)}>&#8595;</NavBtn>
         </NavigationButtons>
